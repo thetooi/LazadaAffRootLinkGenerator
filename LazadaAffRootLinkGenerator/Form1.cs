@@ -120,5 +120,10 @@ namespace LazadaAffRootLinkGenerator
             Properties.Settings.Default.ROOTLINK = textBoxROOTLINK.Text;
             Properties.Settings.Default.Save();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            _ = System.Diagnostics.Process.Start("https://lin.ee/fvFN9m0");
+        }
     }
 }
