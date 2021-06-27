@@ -2,6 +2,7 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Windows.Forms;
 
 namespace LazadaAffRootLinkGenerator
@@ -29,23 +30,20 @@ namespace LazadaAffRootLinkGenerator
             string res;
             if (string.IsNullOrEmpty(Properties.Settings.Default.TOKEN_BITLY) != true)
             {
-                try
+                RestClient client = new RestClient(API_URL);
+                RestRequest request = new RestRequest("shorten");
+                _ = request.AddHeader("Authorization", $"Bearer {API_KEY}");
+                Dictionary<string, string> param = new Dictionary<string, string> { { "long_url", longUrl } };
+                _ = request.AddJsonBody(param);
+                IRestResponse response = client.Post(request);
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    var client = new RestClient(API_URL);
-                    var request = new RestRequest("shorten");
-                    request.AddHeader("Authorization", $"Bearer {API_KEY}");
-                    var param = new Dictionary<string, string> {
-                { "long_url", longUrl }
-                };
-                    request.AddJsonBody(param);
-                    var response = client.Post(request);
                     string content = response.Content;
-                    // WriteLine(content);
                     JObject d = JObject.Parse(content);
-                    var result = (string)d["id"];
+                    string result = (string)d["id"];
                     res = "https://" + result;
                 }
-                catch
+                else
                 {
                     res = "Error: couldn't process the response from bit.ly";
                 }
