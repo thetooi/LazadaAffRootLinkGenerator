@@ -13,7 +13,7 @@ namespace LazadaAffRootLinkGenerator
         public Form1()
         {
             InitializeComponent();
-            textBoxROOTLINK.Focus();
+            _ = textBoxPRODLINK.Focus();
             textBoxROOTLINK.Text = Properties.Settings.Default.ROOTLINK;
         }
 
@@ -21,24 +21,41 @@ namespace LazadaAffRootLinkGenerator
         {
             SetTokenBitly setTokenBitly = new SetTokenBitly();
 
-            setTokenBitly.ShowDialog();
+            _ = setTokenBitly.ShowDialog();
         }
 
         private static string Shorten(string longUrl)
         {
-            var client = new RestClient(API_URL);
-            var request = new RestRequest("shorten");
-            request.AddHeader("Authorization", $"Bearer {API_KEY}");
-            var param = new Dictionary<string, string> {
+            string res;
+            if (string.IsNullOrEmpty(Properties.Settings.Default.TOKEN_BITLY) != true)
+            {
+                try
+                {
+                    var client = new RestClient(API_URL);
+                    var request = new RestRequest("shorten");
+                    request.AddHeader("Authorization", $"Bearer {API_KEY}");
+                    var param = new Dictionary<string, string> {
                 { "long_url", longUrl }
-            };
-            request.AddJsonBody(param);
-            var response = client.Post(request);
-            string content = response.Content;
-            // WriteLine(content);
-            JObject d = JObject.Parse(content);
-            var result = (string)d["id"];
-            return result;
+                };
+                    request.AddJsonBody(param);
+                    var response = client.Post(request);
+                    string content = response.Content;
+                    // WriteLine(content);
+                    JObject d = JObject.Parse(content);
+                    var result = (string)d["id"];
+                    res = "https://" + result;
+                }
+                catch
+                {
+                    res = "Error: couldn't process the response from bit.ly";
+                }
+            }
+            else
+            {
+                res = "Error: your bit.ly access token was not found";
+            }
+            
+            return res;
         }
 
         private void GenLink()
@@ -54,14 +71,7 @@ namespace LazadaAffRootLinkGenerator
                         data += "&sub_aff_id=" + Uri.EscapeDataString(textBoxSUBID.Text);
                     }
                     textBoxAFFLINK.Text = data;
-                    if (string.IsNullOrEmpty(Properties.Settings.Default.TOKEN_BITLY) != true)
-                    {
-                        textBoxBITLY.Text = "https://" + Shorten(textBoxAFFLINK.Text);
-                    }
-                    else
-                    {
-                        textBoxBITLY.Text = "Error: your bit.ly access token was not found";
-                    }
+                    textBoxBITLY.Text = Shorten(textBoxAFFLINK.Text);
                 }
                 catch (Exception e)
                 {
@@ -103,8 +113,8 @@ namespace LazadaAffRootLinkGenerator
             textBoxAFFLINK.Clear();
             textBoxBITLY.Clear();
             textBoxPRODLINK.Clear();
-            textBoxROOTLINK.Clear();
-            _ = textBoxROOTLINK.Focus();
+            // textBoxROOTLINK.Clear();
+            _ = textBoxPRODLINK.Focus();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

@@ -39,5 +39,10 @@ namespace LazadaAffRootLinkGenerator
             }
             label2.Visible = false;
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            _ = System.Diagnostics.Process.Start("https://bitly.is/accesstoken");
+        }
     }
 }
