@@ -43,12 +43,12 @@ namespace LazadaAffRootLinkGenerator
             this.textBoxBITLY = new System.Windows.Forms.TextBox();
             this.btnSetToken = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,68 +140,63 @@ namespace LazadaAffRootLinkGenerator
             // 
             this.textBoxBITLY.Location = new System.Drawing.Point(316, 216);
             this.textBoxBITLY.Name = "textBoxBITLY";
-            this.textBoxBITLY.Size = new System.Drawing.Size(200, 21);
+            this.textBoxBITLY.ReadOnly = true;
+            this.textBoxBITLY.Size = new System.Drawing.Size(215, 21);
             this.textBoxBITLY.TabIndex = 12;
             // 
             // btnSetToken
             // 
+            this.btnSetToken.Image = global::LazadaAffRootLinkGenerator.Properties.Resources.settings;
+            this.btnSetToken.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetToken.Location = new System.Drawing.Point(316, 243);
             this.btnSetToken.Name = "btnSetToken";
-            this.btnSetToken.Size = new System.Drawing.Size(70, 21);
+            this.btnSetToken.Size = new System.Drawing.Size(82, 25);
             this.btnSetToken.TabIndex = 13;
             this.btnSetToken.Text = "Set Token";
+            this.btnSetToken.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSetToken.UseVisualStyleBackColor = true;
             this.btnSetToken.Click += new System.EventHandler(this.btnSetToken_Click);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.button1.Image = global::LazadaAffRootLinkGenerator.Properties.Resources.link;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(15, 245);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 34);
             this.button1.TabIndex = 14;
             this.button1.Text = "Generate";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::LazadaAffRootLinkGenerator.Properties.Resources.LazAfflogo;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(577, 63);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.Image = global::LazadaAffRootLinkGenerator.Properties.Resources.delete;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(116, 252);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(59, 23);
             this.button2.TabIndex = 15;
-            this.button2.Text = "Clear all";
+            this.button2.Text = "Clear";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(517, 215);
+            this.button3.Image = global::LazadaAffRootLinkGenerator.Properties.Resources.copy;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(535, 216);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(57, 22);
             this.button3.TabIndex = 16;
             this.button3.Text = "Copy";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(517, 163);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "Copy";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label7
             // 
@@ -223,11 +218,35 @@ namespace LazadaAffRootLinkGenerator
             this.linkLabel1.Text = "Request Root Link";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // button4
+            // 
+            this.button4.Image = global::LazadaAffRootLinkGenerator.Properties.Resources.copy;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(535, 163);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(57, 23);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "Copy";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LazadaAffRootLinkGenerator.Properties.Resources.LazAfflogo;
+            this.pictureBox1.Location = new System.Drawing.Point(15, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(577, 63);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(610, 291);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label7);

@@ -31,10 +31,10 @@ namespace LazadaAffRootLinkGenerator
         {
             this.textBoxTOKEN = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBoxTOKEN
@@ -53,17 +53,6 @@ namespace LazadaAffRootLinkGenerator
             this.label1.Size = new System.Drawing.Size(140, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "GENERIC ACCESS TOKEN";
-            // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(142, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -95,6 +84,21 @@ namespace LazadaAffRootLinkGenerator
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "access token.";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Enabled = false;
+            this.button1.Image = global::LazadaAffRootLinkGenerator.Properties.Resources.save;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(142, 80);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(57, 25);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Save";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SetTokenBitly
             // 

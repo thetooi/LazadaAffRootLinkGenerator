@@ -154,6 +154,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\link.png" />
+    <None Include="Resources\settings.png" />
+    <None Include="Resources\save.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
