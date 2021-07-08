@@ -26,12 +26,12 @@ namespace LazadaAffRootLinkGenerator.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string TOKEN_BITLY {
+        public string TOKEN_TOUICC {
             get {
-                return ((string)(this["TOKEN_BITLY"]));
+                return ((string)(this["TOKEN_TOUICC"]));
             }
             set {
-                this["TOKEN_BITLY"] = value;
+                this["TOKEN_TOUICC"] = value;
             }
         }
         

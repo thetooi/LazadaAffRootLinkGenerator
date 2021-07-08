@@ -132,9 +132,9 @@ namespace LazadaAffRootLinkGenerator
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(313, 200);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.Size = new System.Drawing.Size(114, 13);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Bit.ly UrlShortener";
+            this.label5.Text = "Toui.cc URL Shortener";
             // 
             // textBoxBITLY
             // 
@@ -150,9 +150,9 @@ namespace LazadaAffRootLinkGenerator
             this.btnSetToken.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSetToken.Location = new System.Drawing.Point(316, 243);
             this.btnSetToken.Name = "btnSetToken";
-            this.btnSetToken.Size = new System.Drawing.Size(82, 25);
+            this.btnSetToken.Size = new System.Drawing.Size(69, 25);
             this.btnSetToken.TabIndex = 13;
-            this.btnSetToken.Text = "Set Token";
+            this.btnSetToken.Text = "Set API";
             this.btnSetToken.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSetToken.UseVisualStyleBackColor = true;
             this.btnSetToken.Click += new System.EventHandler(this.btnSetToken_Click);

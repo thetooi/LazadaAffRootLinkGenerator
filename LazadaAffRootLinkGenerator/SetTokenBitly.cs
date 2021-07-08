@@ -15,34 +15,28 @@ namespace LazadaAffRootLinkGenerator
         public SetTokenBitly()
         {
             InitializeComponent();
-            textBoxTOKEN.Text = Properties.Settings.Default.TOKEN_BITLY;
+            textBoxTOKEN.Text = Properties.Settings.Default.TOKEN_TOUICC;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBoxTOKEN.Text) != true && textBoxTOKEN.Text.Length == 40)
+            if (string.IsNullOrEmpty(textBoxTOKEN.Text) != true
+                && textBoxTOKEN.Text.Length == 12)
             {
-                Properties.Settings.Default.TOKEN_BITLY = textBoxTOKEN.Text;
+                Properties.Settings.Default.TOKEN_TOUICC = textBoxTOKEN.Text;
                 label2.Visible = true;
             }
         }
 
         private void textBoxTOKEN_TextChanged(object sender, EventArgs e)
         {
-            if (textBoxTOKEN.Text.Length == 40)
-            {
-                button1.Enabled = true;
-            }
-            else
-            {
-                button1.Enabled = false;
-            }
+            button1.Enabled = textBoxTOKEN.Text.Length == 12;
             label2.Visible = false;
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            _ = System.Diagnostics.Process.Start("https://bitly.is/accesstoken");
+            _ = System.Diagnostics.Process.Start("https://toui.cc/user/tools/api");
         }
     }
 }

@@ -9,8 +9,8 @@ namespace LazadaAffRootLinkGenerator
 {
     public partial class Form1 : Form
     {
-        private static readonly string API_KEY = Properties.Settings.Default.TOKEN_BITLY;
-        private static readonly string API_URL = "https://api-ssl.bit.ly/v4";
+        private static readonly string API_KEY = Properties.Settings.Default.TOKEN_TOUICC;
+        private static readonly string API_URL = "https://toui.cc/api/url";
         public Form1()
         {
             InitializeComponent();
@@ -28,29 +28,30 @@ namespace LazadaAffRootLinkGenerator
         private static string Shorten(string longUrl)
         {
             string res;
-            if (string.IsNullOrEmpty(Properties.Settings.Default.TOKEN_BITLY) != true)
+            if (string.IsNullOrEmpty(Properties.Settings.Default.TOKEN_TOUICC) != true)
             {
                 RestClient client = new RestClient(API_URL);
-                RestRequest request = new RestRequest("shorten");
-                _ = request.AddHeader("Authorization", $"Bearer {API_KEY}");
-                Dictionary<string, string> param = new Dictionary<string, string> { { "long_url", longUrl } };
+                RestRequest request = new RestRequest("add");
+                _ = request.AddHeader("Authorization", $"Token {API_KEY}");
+                _ = request.AddHeader("Content-Type", "application/json");
+                Dictionary<string, string> param = new Dictionary<string, string> { { "url", longUrl } };
                 _ = request.AddJsonBody(param);
                 IRestResponse response = client.Post(request);
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     string content = response.Content;
                     JObject d = JObject.Parse(content);
-                    string result = (string)d["id"];
-                    res = "https://" + result;
+                    string result = (string)d["short"];
+                    res = result;
                 }
                 else
                 {
-                    res = "Error: couldn't process the response from bit.ly";
+                    res = "Error: couldn't process the response from toui.cc";
                 }
             }
             else
             {
-                res = "Error: your bit.ly access token was not found";
+                res = "Error: your toui.cc access token was not found";
             }
             
             return res;
