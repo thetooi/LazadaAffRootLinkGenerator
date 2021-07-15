@@ -57,9 +57,9 @@ namespace LazadaAffRootLinkGenerator
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(104, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Root Link";
+            this.label1.Text = "RootLink or Deeplink";
             // 
             // label2
             // 
@@ -210,12 +210,12 @@ namespace LazadaAffRootLinkGenerator
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(197, 76);
+            this.linkLabel1.Location = new System.Drawing.Point(141, 76);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(94, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(150, 13);
             this.linkLabel1.TabIndex = 19;
             this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Request Root Link";
+            this.linkLabel1.Text = "Request Root Link or Deeplink";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // button4
@@ -274,7 +274,7 @@ namespace LazadaAffRootLinkGenerator
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lazada Affiliate Root Link Generator";
+            this.Text = "Lazada Affiliate DeepLink Generator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
