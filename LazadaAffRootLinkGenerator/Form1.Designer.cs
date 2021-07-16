@@ -58,7 +58,7 @@ namespace LazadaAffRootLinkGenerator
             this.label1.Location = new System.Drawing.Point(12, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 13);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 20;
             this.label1.Text = "RootLink or Deeplink";
             // 
             // label2
@@ -67,7 +67,7 @@ namespace LazadaAffRootLinkGenerator
             this.label2.Location = new System.Drawing.Point(12, 147);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 22;
             this.label2.Text = "Product URL";
             // 
             // label3
@@ -76,7 +76,7 @@ namespace LazadaAffRootLinkGenerator
             this.label3.Location = new System.Drawing.Point(12, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 13);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 23;
             this.label3.Text = "Sub Aff ID";
             // 
             // label4
@@ -85,7 +85,7 @@ namespace LazadaAffRootLinkGenerator
             this.label4.Location = new System.Drawing.Point(313, 75);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
-            this.label4.TabIndex = 3;
+            this.label4.TabIndex = 24;
             this.label4.Text = "Affiliate Link";
             // 
             // textBoxROOTLINK
@@ -93,21 +93,21 @@ namespace LazadaAffRootLinkGenerator
             this.textBoxROOTLINK.Location = new System.Drawing.Point(15, 92);
             this.textBoxROOTLINK.Name = "textBoxROOTLINK";
             this.textBoxROOTLINK.Size = new System.Drawing.Size(276, 21);
-            this.textBoxROOTLINK.TabIndex = 4;
+            this.textBoxROOTLINK.TabIndex = 1;
             // 
             // textBoxPRODLINK
             // 
             this.textBoxPRODLINK.Location = new System.Drawing.Point(15, 163);
             this.textBoxPRODLINK.Name = "textBoxPRODLINK";
             this.textBoxPRODLINK.Size = new System.Drawing.Size(276, 21);
-            this.textBoxPRODLINK.TabIndex = 5;
+            this.textBoxPRODLINK.TabIndex = 2;
             // 
             // textBoxSUBID
             // 
             this.textBoxSUBID.Location = new System.Drawing.Point(15, 216);
             this.textBoxSUBID.Name = "textBoxSUBID";
             this.textBoxSUBID.Size = new System.Drawing.Size(276, 21);
-            this.textBoxSUBID.TabIndex = 6;
+            this.textBoxSUBID.TabIndex = 3;
             // 
             // textBoxAFFLINK
             // 
@@ -115,7 +115,7 @@ namespace LazadaAffRootLinkGenerator
             this.textBoxAFFLINK.Multiline = true;
             this.textBoxAFFLINK.Name = "textBoxAFFLINK";
             this.textBoxAFFLINK.Size = new System.Drawing.Size(276, 95);
-            this.textBoxAFFLINK.TabIndex = 7;
+            this.textBoxAFFLINK.TabIndex = 4;
             this.textBoxAFFLINK.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBoxAFFLINK_MouseClick);
             // 
             // label6
@@ -124,7 +124,7 @@ namespace LazadaAffRootLinkGenerator
             this.label6.Location = new System.Drawing.Point(12, 116);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(216, 13);
-            this.label6.TabIndex = 9;
+            this.label6.TabIndex = 21;
             this.label6.Text = "Example:  https://c.lazada.co.th/t/c.bVqvi5";
             // 
             // label5
@@ -142,7 +142,7 @@ namespace LazadaAffRootLinkGenerator
             this.textBoxBITLY.Name = "textBoxBITLY";
             this.textBoxBITLY.ReadOnly = true;
             this.textBoxBITLY.Size = new System.Drawing.Size(215, 21);
-            this.textBoxBITLY.TabIndex = 12;
+            this.textBoxBITLY.TabIndex = 5;
             // 
             // btnSetToken
             // 
@@ -165,7 +165,7 @@ namespace LazadaAffRootLinkGenerator
             this.button1.Location = new System.Drawing.Point(15, 245);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 34);
-            this.button1.TabIndex = 14;
+            this.button1.TabIndex = 0;
             this.button1.Text = "Generate";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
@@ -276,6 +276,7 @@ namespace LazadaAffRootLinkGenerator
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lazada Affiliate DeepLink Generator";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

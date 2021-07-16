@@ -14,8 +14,6 @@ namespace LazadaAffRootLinkGenerator
         public Form1()
         {
             InitializeComponent();
-            _ = textBoxPRODLINK.Focus();
-            textBoxROOTLINK.Text = Properties.Settings.Default.ROOTLINK;
         }
 
         private void btnSetToken_Click(object sender, EventArgs e)
@@ -125,6 +123,19 @@ namespace LazadaAffRootLinkGenerator
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             _ = System.Diagnostics.Process.Start("https://lin.ee/fvFN9m0");
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Properties.Settings.Default.ROOTLINK) != true)
+            {
+                textBoxROOTLINK.Text = Properties.Settings.Default.ROOTLINK;
+                _ = textBoxPRODLINK.Focus();
+            }
+            else
+            {
+                _ = textBoxROOTLINK.Focus();
+            }
         }
     }
 }
