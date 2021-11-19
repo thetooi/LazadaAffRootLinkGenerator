@@ -30,7 +30,7 @@ namespace LazadaAffRootLinkGenerator
             {
                 RestClient client = new RestClient(API_URL);
                 RestRequest request = new RestRequest("add");
-                _ = request.AddHeader("Authorization", $"Token {API_KEY}");
+                _ = request.AddHeader("Authorization", $"Bearer {API_KEY}");
                 _ = request.AddHeader("Content-Type", "application/json");
                 Dictionary<string, string> param = new Dictionary<string, string> { { "url", longUrl } };
                 _ = request.AddJsonBody(param);
@@ -39,7 +39,7 @@ namespace LazadaAffRootLinkGenerator
                 {
                     string content = response.Content;
                     JObject d = JObject.Parse(content);
-                    string result = (string)d["short"];
+                    string result = (string)d["shorturl"];
                     res = result;
                 }
                 else
